@@ -104,8 +104,7 @@ autodoxy/
 ├── dokumentacio.md
 ├── examples/
     ├── encrypted_string.h  //Prog2 nagy HF egyik része
-    ├── out.h               //kész kommentezett rész
-    └── student.hpp
+    └── out.h               //kész kommentezett rész
 
 ```
 ## Megvalósítás
