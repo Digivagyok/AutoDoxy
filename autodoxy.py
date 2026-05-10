@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 import json
 import os
@@ -185,13 +187,18 @@ def normalize_newlines(text: str, newline: str) -> str:
 
 def main() -> int:
     args = parse_args()
-    load_dotenv(Path(args.env_file))
+    script_dir = Path(__file__).resolve().parent
+    env_path = Path(args.env_file)
+    if not env_path.is_absolute():
+        env_path = script_dir / env_path
+
+    load_dotenv(env_path)
 
     api_key = os.environ.get(args.api_key_env)
     if not api_key:
         print(
             (
-                f"Missing Gemini API key. Add {args.api_key_env} to {args.env_file} "
+                f"Missing Gemini API key. Add {args.api_key_env} to {env_path} "
                 f"or set the {args.api_key_env} environment variable."
             ),
             file=sys.stderr,
