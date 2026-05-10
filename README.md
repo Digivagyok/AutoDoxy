@@ -21,8 +21,8 @@ It reads a source file, sends the code to Gemini with instructions to document i
 ## Project Files
 
 - [autodoxy.py](autodoxy.py): main CLI script
-- [encrypted_string.h](encrypted_string.h): example input file
-- [out.h](out.h): example generated output
+- [encrypted_string.h](examples/encrypted_string.h): example input file
+- [out.h](examples/out.h): example generated output
 - [.env.example](.env.example): example environment file
 
 ## Setup
